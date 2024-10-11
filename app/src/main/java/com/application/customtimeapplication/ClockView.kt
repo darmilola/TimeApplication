@@ -35,13 +35,11 @@ class ClockView @JvmOverloads constructor(private val context: Context?, private
     private var mHourHandSize = 0
     private var mHandSize = 0
     private var timeZoneId: String? = ""
+    private var isDarkMode: Boolean = true
 
     private fun init() {
-        val width = Resources.getSystem().displayMetrics.widthPixels
-        val height = Resources.getSystem().displayMetrics.heightPixels
-        mHeight = 500
-        mWidth = width - 70
-        mPadding = 70
+        mHeight = 230
+        mWidth = 230
         mCentreX = mWidth / 2
         mCentreY = mHeight / 2
         mMinimum = mHeight.coerceAtMost(mWidth)
@@ -59,6 +57,10 @@ class ClockView @JvmOverloads constructor(private val context: Context?, private
         this.timeZoneId = timeZone
     }
 
+    public fun setIsDarkMode(isDarkMode: Boolean = false){
+        this.isDarkMode = isDarkMode
+    }
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         if (!mIsInit) {
@@ -66,14 +68,28 @@ class ClockView @JvmOverloads constructor(private val context: Context?, private
         }
         drawCircle(canvas)
         drawHands(canvas)
-        drawNumerals(canvas)
+       // drawNumerals(canvas)
+        drawRedCircle(canvas)
+        drawBlackCircle(canvas)
         postInvalidateDelayed(500)
     }
 
     private fun drawCircle(canvas: Canvas) {
         mPaint!!.reset()
-        setPaintAttributes(Color.BLACK, Paint.Style.STROKE, 8)
-        canvas.drawCircle(mCentreX.toFloat(), mCentreY.toFloat(), mRadius+50.toFloat(), mPaint!!)
+        setPaintAttributes(if (isDarkMode) Color.BLACK else Color.WHITE, Paint.Style.FILL, 8)
+        canvas.drawCircle(mCentreX.toFloat(), mCentreY.toFloat(), mRadius.toFloat(), mPaint!!)
+    }
+
+    private fun drawRedCircle(canvas: Canvas) {
+        mPaint!!.reset()
+        setPaintAttributes(Color.RED, Paint.Style.FILL, 8)
+        canvas.drawCircle(mCentreX.toFloat(), mCentreY.toFloat(), 10.toFloat(), mPaint!!)
+    }
+
+    private fun drawBlackCircle(canvas: Canvas) {
+        mPaint!!.reset()
+        setPaintAttributes(if (isDarkMode) Color.WHITE else Color.BLACK, Paint.Style.STROKE, 4)
+        canvas.drawCircle(mCentreX.toFloat(), mCentreY.toFloat(), 10.toFloat(), mPaint!!)
     }
 
     private fun setPaintAttributes(colour: Int, stroke: Paint.Style, strokeWidth: Int) {
@@ -97,7 +113,7 @@ class ClockView @JvmOverloads constructor(private val context: Context?, private
 
     private fun drawMinuteHand(canvas: Canvas, location: Int) {
         mPaint!!.reset();
-        setPaintAttributes(Color.BLACK, Paint.Style.STROKE,8);
+        setPaintAttributes(if (isDarkMode) Color.WHITE else Color.BLACK, Paint.Style.STROKE,6);
         mAngle = Math.PI * location / 30 - Math.PI / 2;
         canvas.drawLine(mCentreX.toFloat(),
             mCentreY.toFloat(),
@@ -108,7 +124,7 @@ class ClockView @JvmOverloads constructor(private val context: Context?, private
 
     private fun drawHourHand(canvas: Canvas, location: Double) {
         mPaint!!.reset()
-        setPaintAttributes(Color.BLACK, Paint.Style.STROKE, 10)
+        setPaintAttributes(if (isDarkMode) Color.WHITE else Color.BLACK, Paint.Style.STROKE, 6)
         mAngle = Math.PI * location / 30 - Math.PI / 2
         canvas.drawLine(
             mCentreX.toFloat(),
@@ -121,7 +137,7 @@ class ClockView @JvmOverloads constructor(private val context: Context?, private
 
     private fun drawSecondsHand(canvas: Canvas, location: Float) {
         mPaint!!.reset()
-        setPaintAttributes(Color.RED, Paint.Style.STROKE, 8)
+        setPaintAttributes(Color.RED, Paint.Style.STROKE, 4)
         mAngle = Math.PI * location / 30 - Math.PI / 2
         canvas.drawLine(
             mCentreX.toFloat(),
@@ -132,7 +148,7 @@ class ClockView @JvmOverloads constructor(private val context: Context?, private
         )
     }
 
-    private fun drawNumerals(canvas: Canvas) {
+  /*  private fun drawNumerals(canvas: Canvas) {
         mPaint!!.textSize = 50F
         mPaint!!.color = Color.BLACK
         for (number in mNumbers) {
@@ -143,7 +159,7 @@ class ClockView @JvmOverloads constructor(private val context: Context?, private
             val y = (mCentreY + Math.sin(angle) * mRadius + mRect!!.height() / 2).toInt()
             canvas.drawText(num, x.toFloat(), y.toFloat(), mPaint!!)
         }
-    }
+    }*/
 
 
 

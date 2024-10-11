@@ -2,115 +2,202 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="300dp"
+    android:background="@color/black"
+    android:gravity="center"
     android:layout_centerInParent="true">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                card_view:cardBackgroundColor="#5E5D5D"
+                card_view:cardCornerRadius="50dp"
+                card_view:cardElevation="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:elevation="0dp"
+                android:layout_weight="1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="start"
+        android:paddingStart="3dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Amsterdam"/>
-
         <com.application.customtimeapplication.ClockView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/amclockView"/>
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:padding="20dp"
+            android:id="@+id/ukClockView"/>
 
         <TextClock
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/amDigitalView"
-            android:gravity="center"/>
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:format24Hour="hh:mm"
+            android:format12Hour="kk:mm"
+            android:id="@+id/ukTextClock"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UK"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="20dp"/>
+
     </LinearLayout>
+ </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                card_view:cardBackgroundColor="#5E5D5D"
+                card_view:cardCornerRadius="50dp"
+                card_view:cardElevation="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:elevation="0dp"
                 android:layout_weight="1">
-                <TextView
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Dubai"/>
+                    android:gravity="start"
+                    android:paddingStart="3dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+                    <com.application.customtimeapplication.ClockView
+                        android:layout_width="250dp"
+                        android:layout_height="100dp"
+                        android:padding="20dp"
+                        android:id="@+id/amClockView"/>
 
-                <com.application.customtimeapplication.ClockView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:id="@+id/duclockView"/>
+                    <TextClock
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:format24Hour="hh:mm"
+                        android:format12Hour="kk:mm"
+                        android:id="@+id/amTextClock"
+                        android:textSize="30dp"/>
 
-                <TextClock
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/duDigitalView"
-                    android:gravity="center"/>
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="AMS"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textSize="20dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                card_view:cardBackgroundColor="#5E5D5D"
+                card_view:cardCornerRadius="50dp"
+                card_view:cardElevation="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:elevation="0dp"
                 android:layout_weight="1">
-                <TextView
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="London"/>
+                    android:gravity="start"
+                    android:paddingStart="3dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+                    <com.application.customtimeapplication.ClockView
+                        android:layout_width="250dp"
+                        android:layout_height="100dp"
+                        android:padding="20dp"
+                        android:id="@+id/uaeClockView"/>
 
-                <com.application.customtimeapplication.ClockView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:id="@+id/lonclockView"/>
+                    <TextClock
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:format24Hour="hh:mm"
+                        android:format12Hour="kk:mm"
+                        android:id="@+id/uaeTextClock"
+                        android:textSize="30dp"/>
 
-                <TextClock
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/lonDigitalView"
-                    android:gravity="center"/>
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="UAE"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textSize="20dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                card_view:cardBackgroundColor="#5E5D5D"
+                card_view:cardCornerRadius="50dp"
+                card_view:cardElevation="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:elevation="0dp"
                 android:layout_weight="1">
-                <TextView
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Bogota"/>
+                    android:gravity="start"
+                    android:paddingStart="3dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+                    <com.application.customtimeapplication.ClockView
+                        android:layout_width="250dp"
+                        android:layout_height="100dp"
+                        android:padding="20dp"
+                        android:id="@+id/colClockView"/>
 
-                <com.application.customtimeapplication.ClockView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:id="@+id/boclockView"/>
+                    <TextClock
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:id="@+id/colTextClock"
+                        android:format24Hour="hh:mm"
+                        android:format12Hour="kk:mm"
+                        android:textSize="30dp"/>
 
-                <TextClock
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/boDigitalView"
-                    android:gravity="center"/>
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="COL"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textSize="20dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
  </LinearLayout>
-    </ScrollView>
+
 </LinearLayout>

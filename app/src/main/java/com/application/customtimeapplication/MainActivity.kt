@@ -12,38 +12,44 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.application.customtimeapplication.ui.theme.CustomTimeApplicationTheme
 
 class MainActivity : Activity() {
+    private var ukClockView: ClockView? = null
     private var amClockView: ClockView? = null
-    private var loClockView: ClockView? = null
-    private var boClockView: ClockView? = null
-    private var duClockView: ClockView? = null
+    private var uaeClockView: ClockView? = null
+    private var colClockView: ClockView? = null
 
-    private var amDigitalView: TextClock? = null
-    private var loDigitalView: TextClock? = null
-    private var boDigitalView: TextClock? = null
-    private var duDigitalView: TextClock? = null
+    private var ukTextClock: TextClock? = null
+    private var amsTextClock: TextClock? = null
+    private var uaeTextClock: TextClock? = null
+    private var colTextClock: TextClock? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        amClockView = findViewById(R.id.amclockView)
-        loClockView = findViewById(R.id.lonclockView)
-        boClockView = findViewById(R.id.boclockView)
-        duClockView = findViewById(R.id.duclockView)
+        amClockView = findViewById(R.id.amClockView)
+        ukClockView = findViewById(R.id.ukClockView)
+        uaeClockView = findViewById(R.id.uaeClockView)
+        colClockView = findViewById(R.id.colClockView)
 
-        amDigitalView = findViewById(R.id.amDigitalView)
-        loDigitalView = findViewById(R.id.lonDigitalView)
-        boDigitalView = findViewById(R.id.boDigitalView)
-        duDigitalView = findViewById(R.id.duDigitalView)
+        ukClockView!!.setIsDarkMode(false)
+        uaeClockView!!.setIsDarkMode(false)
 
-        boClockView!!.setTimeZone("America/Bogota")
+        ukTextClock = findViewById(R.id.ukTextClock)
+        amsTextClock = findViewById(R.id.amTextClock)
+        uaeTextClock = findViewById(R.id.uaeTextClock)
+        colTextClock = findViewById(R.id.colTextClock)
+
+        colClockView!!.setTimeZone("America/Bogota")
         amClockView!!.setTimeZone("Europe/Amsterdam")
-        duClockView!!.setTimeZone("Asia/Dubai")
-        loClockView!!.setTimeZone("Europe/London")
+        uaeClockView!!.setTimeZone("Asia/Dubai")
+        ukClockView!!.setTimeZone("Europe/London")
 
-        amDigitalView!!.timeZone = "Europe/Amsterdam"
-        loDigitalView!!.timeZone = "Europe/London"
-        boDigitalView!!.timeZone = "America/Bogota"
-        duDigitalView!!.timeZone = "Asia/Dubai"
+        colTextClock!!.setTimeZone("America/Bogota")
+        amsTextClock!!.setTimeZone("Europe/Amsterdam")
+        uaeTextClock!!.setTimeZone("Asia/Dubai")
+        ukTextClock!!.setTimeZone("Europe/London")
+
+
 
     }
 }
