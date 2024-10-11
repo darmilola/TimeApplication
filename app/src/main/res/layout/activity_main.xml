@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Amsterdam"/>
+
+        <com.application.customtimeapplication.ClockView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/amclockView"/>
+
+        <TextClock
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/amDigitalView"
+            android:gravity="center"/>
+    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Dubai"/>
+
+                <com.application.customtimeapplication.ClockView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/duclockView"/>
+
+                <TextClock
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/duDigitalView"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="London"/>
+
+                <com.application.customtimeapplication.ClockView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/lonclockView"/>
+
+                <TextClock
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lonDigitalView"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Bogota"/>
+
+                <com.application.customtimeapplication.ClockView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/boclockView"/>
+
+                <TextClock
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/boDigitalView"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+ </LinearLayout>
+    </ScrollView>
+</LinearLayout>
